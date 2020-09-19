@@ -1,0 +1,232 @@
+<div class="stepper" *ngIf = "role == 'admin'">
+    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Dane osobowe</ng-template>
+
+            <mat-form-field>
+            <mat-label>Imię</mat-label>
+            <input [(ngModel)]="imie" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Nazwisko</mat-label>
+                <input [(ngModel)]="nazwisko" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Numer albumu</mat-label>
+                <input [(ngModel)]="numerAlbumu" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Pesel</mat-label>
+                <input [(ngModel)]="pesel" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <br>
+    
+            <mat-form-field>
+                <mat-label>Data urodzenia</mat-label>
+                <input [(ngModel)]="dataUrodzenia" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Miejsce urodzenia</mat-label>
+                <input [(ngModel)]="miejsceUrodzenia" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Płeć</mat-label>
+                <input [(ngModel)]="plec" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Narodowść</mat-label>
+                <input [(ngModel)]="narodowosc" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <br>
+    
+            <mat-form-field>
+                <mat-label>Obywatelstwo</mat-label>
+                <input [(ngModel)]="obywatelstwo" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Seria i numer dowodu osobistego</mat-label>
+                <input [(ngModel)]="nrDowodu" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Imię Matki</mat-label>
+                <input [(ngModel)]="imieMatki" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Imię Ojca</mat-label>
+                <input [(ngModel)]="imieOjca" matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <!-- <h5 class="card-title">Wybierz zdjęcie: </h5>
+            <input class="upload" type="file" (change)="upload($event)" accept=".png,.jpg"/>
+            <br>
+            <button (click)="towjastarasradofgara()"> Jak dodasz obrazka to zrobie ci papapnanan </button> -->
+
+            <div>
+            <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Dane adresowe</ng-template>
+
+            <p class="title">Adres stałego zameldowania</p>
+
+            <mat-form-field>
+                <mat-label>Ulica</mat-label>
+                <input [(ngModel)]="ulica" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Kod pocztowy</mat-label>
+                <input [(ngModel)]="kodPocztowy" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Miejscowość</mat-label>
+                <input [(ngModel)]="miejscowosc" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <br>
+
+            <p class="title">Adres do korespondencji</p>
+
+            <mat-form-field>
+                <mat-label>Ulica</mat-label>
+                <input [(ngModel)]="ulicaKorespondencja" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Kod pocztowy</mat-label>
+                <input [(ngModel)]="kodPocztowyKorespondencja" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Miejscowość</mat-label>
+                <input [(ngModel)]="miejscowoscKorespondencja" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <br>
+
+            <p class="title">Dane kontaktowe</p>
+
+            <mat-form-field>
+                <mat-label>E-mail prywatny</mat-label>
+                <input [(ngModel)]="emailPrywatny" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>E-mail</mat-label>
+                <input [(ngModel)]="emailUczelnia" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Hasło</mat-label>
+                <input [(ngModel)]="haslo" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Numer telefonu</mat-label>
+                <input [(ngModel)]="nrTelefonu" matInput formControlName="secondCtrl" placeholder="" required>
+            </mat-form-field>
+
+            <br>
+
+            <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+        </mat-step>
+
+        <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Wykształcenie</ng-template>
+        
+                <mat-form-field>
+                    <mat-label>Numer świadectwa maturalnego</mat-label>
+                    <input [(ngModel)]="nrSwiadectwa" matInput formControlName="thirdCtrl" placeholder="" required>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Data wydania świadectwa</mat-label>
+                    <input [(ngModel)]="dataWydania" matInput formControlName="thirdCtrl" placeholder="" required>
+                </mat-form-field>
+
+                <br>
+        
+                <mat-form-field>
+                    <mat-label>Szkoła</mat-label>
+                    <input [(ngModel)]="szkola" matInput formControlName="thirdCtrl" placeholder="" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Rok ukończenia szkoły</mat-label>
+                    <input [(ngModel)]="rokKoniecSzkoly" matInput formControlName="thirdCtrl" placeholder="" required>
+                </mat-form-field>
+        
+                <br>
+            
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="fourthFormGroup">
+            <form [formGroup]="fourthFormGroup">
+                <ng-template matStepLabel>Tok studiów</ng-template>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Kierunek</mat-label>
+                    <mat-select [(value)]="kierunek" (selectionChange)="getStudyAndLecturerName()">
+                        <mat-option *ngFor="let kierunek of kierunki | async" [value]="kierunek.nazwa">
+                            {{kierunek.nazwa}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Grupa</mat-label>
+                    <mat-select [(value)]="grupa">
+                        <mat-option *ngFor="let group of groups" [value]="group.value">
+                        {{group.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+        
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+
+        <br>
+        <p class="title">Jeśli wszystkie dane zostały wypełnione naciśnji przycisk "Zakończ"</p>
+        <br>
+        
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button class="end" (click)="addUser()">Zakończ</button>
+        </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>
+  

@@ -1,0 +1,343 @@
+<div class="mainContainer" *ngIf = "role == 'admin'">
+  <div class="settingsContainer">
+
+      <mat-form-field class="settingsDatePicker" appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" (dateChange)="getDate($event.target.value)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="settingsDropdown" appearance="fill">
+          <mat-label>Grupa</mat-label>
+          <mat-select  id="grupa" placeholder=" " >
+            <mat-option *ngFor="let grupa of grupy | async" [value]="grupa.groupName">
+              {{grupa.groupName}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+        
+      <button (click)="addTimetable()" mat-button>Dodaj</button>
+  </div>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina1">06:20 - 7:50</p></div>
+      
+      <mat-form-field class="mat-form-field" appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia1" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala1" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca1" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina2">08:00 - 9:30</p></div>
+
+      <mat-form-field class="mat-form-field" appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia2" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala2" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca2" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina3">09:40 - 11:10</p></div>
+
+      <mat-form-field class="mat-form-field" appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia3" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala3" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca3" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina4">11:20 - 12:50</p></div>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia4" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala4" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca4" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina5">13:00 - 14:30</p></div>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia5" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala5" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca5" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina6">14:40 - 16:10</p></div>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia6" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala6" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca6" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina7">16:20 - 17:50</p></div>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia7" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala7" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca7" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina8">18:00 - 19:30</p></div>
+      
+
+      <mat-form-field appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia8" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala8" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca8" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina9">19:40 - 21:10</p></div>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia9" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala9" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca9" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <div class="pContainer"><p id="godzina10">21:20 - 22:50</p></div>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Zajęcia</mat-label>
+          <mat-select id="zajecia10" placeholder=" ">
+            <mat-option *ngFor="let zajecie of zajecia | async" [value]="zajecie.nazwa">
+              {{zajecie.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Sala</mat-label>
+          <mat-select id="sala10" placeholder=" ">
+            <mat-option *ngFor="let sala of sale | async" [value]="sala.nazwa">
+              {{sala.nazwa}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Wykładowca</mat-label>
+          <mat-select id="wykladowca10" placeholder=" ">
+            <mat-option *ngFor="let wykladowca of wykladowcy | async" [value]="wykladowca.imieNazwisko">
+              {{wykladowca.imieNazwisko}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+  </mat-card>
+</div>

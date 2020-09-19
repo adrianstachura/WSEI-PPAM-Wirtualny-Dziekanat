@@ -1,0 +1,46 @@
+<div class="main-container" *ngIf = "role == 'wykladowca'">
+
+<mat-card>
+    <h3>Wprowadź ocenę</h3>
+    <div class="input-container">		
+        <input [(ngModel)]="nralbumu" type="text" (ngModelChange)="getNrAlbumu()"/>
+        <label>Nr Albumu</label>
+    </div>
+    <div class="select">
+        <select name="slct" id="slct" [(ngModel)]="semestr" (ngModelChange)="getSubjectList()" >
+            <option [ngValue]="undefined" disabled selected>Semestr</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+        </select>
+    </div>
+
+    <div class="select">
+        <select name="slct" [(ngModel)]="przedmiot" id="slct">
+            <option [ngValue]="undefined" disabled selected>Przedmiot</option>
+            <option *ngFor="let kierunek of kierunki | async" [value]="kierunek.nazwa">
+                {{kierunek.nazwa}}
+            </option>
+        </select>
+    </div>
+
+    <div class="select">
+        <select name="slct" [(ngModel)]="ocena" id="slct">
+            <option [ngValue]="undefined" disabled selected>Ocena</option>
+            <option>2</option>
+            <option>3</option>
+            <option>3.5</option>
+            <option>4</option>
+            <option>4.5</option>
+            <option>5</option>
+        </select>
+    </div>
+    <button mat-raised-button (click)="addGrade()">+</button>
+
+</mat-card>
+
+</div>

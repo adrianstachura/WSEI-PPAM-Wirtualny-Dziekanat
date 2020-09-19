@@ -1,0 +1,78 @@
+<div *ngIf="auth.user$ | async; then authenticated">
+    <!-- template will replace this div -->
+</div>
+
+<ng-template #authenticated>
+  <div class="mainContainer" *ngIf="auth.user$ | async as user">
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #drawer class="sidenav" 
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+        
+        <mat-nav-list>
+
+          <a mat-list-item routerLink="/home/homePage" routerLinkActive="active-list-item-home"> <mat-icon>home</mat-icon> Home</a>
+          <mat-divider></mat-divider>
+
+          <a mat-list-item routerLink="/home/userProfile" routerLinkActive="active-list-item" *ngIf = "user.role == 'student'">Profil użytkownika</a>
+          <mat-divider *ngIf = "user.role == 'student'"></mat-divider>
+
+          <a mat-list-item routerLink="/home/planZajec" routerLinkActive="active-list-item">Plan Zajęć</a>
+          <mat-divider></mat-divider>
+
+          <a mat-list-item routerLink="/home/grades" routerLinkActive="active-list-item" *ngIf = "user.role == 'student'">Oceny</a>
+          <mat-divider *ngIf = "user.role == 'student'"></mat-divider>
+
+          <a mat-list-item routerLink="/home/addGrades" routerLinkActive="active-list-item" *ngIf = "user.role == 'wykladowca'">Dodaj oceny</a>
+          <mat-divider *ngIf = "user.role == 'student'"></mat-divider>
+
+          <a mat-list-item routerLink="/home/addUser" routerLinkActive="active-list-item" *ngIf = "user.role == 'admin'">Dodaj użytkownika</a>
+          <mat-divider *ngIf = "user.role == 'admin'"></mat-divider>
+
+          <a mat-list-item routerLink="/home/editUser" routerLinkActive="active-list-item" *ngIf = "user.role == 'admin'">Edycja danych użytkownika</a>
+          <mat-divider *ngIf = "user.role == 'admin'"></mat-divider>
+
+          <a mat-list-item routerLink="/home/addTimetable" routerLinkActive="active-list-item" *ngIf = "user.role == 'admin'">Dodaj plan zajęć</a>
+          <mat-divider *ngIf = "user.role == 'admin'"></mat-divider>
+
+          <a mat-list-item routerLink="/home/addClasses" routerLinkActive="active-list-item" *ngIf = "user.role == 'admin'">Dodaj grupy, zajęcia oraz kierunki</a>
+          <mat-divider *ngIf = "user.role == 'admin'"></mat-divider>
+
+          <a mat-list-item routerLink="/home/addFieldOfStudy" routerLinkActive="active-list-item" *ngIf = "user.role == 'admin'">Edycja i dodawanie kierunku</a>
+          <mat-divider *ngIf = "user.role == 'admin'"></mat-divider>
+
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+
+        <div class="userBar">
+          <button
+            type="button"
+            aria-label="Toggle sidenav"
+            mat-icon-button
+            (click)="drawer.toggle()"
+            *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+
+          <button
+            class="logoutButton"
+            mat-button (click)="auth.signOut()">
+            Wyloguj
+          </button>
+
+          <span *ngIf="user.role != 'student'">Jesteś zalogowany jako, {{user.imieNazwisko}} </span>
+          <span *ngIf="user.role == 'student'">Jesteś zalogowany jako, {{user.name}} {{user.surname}}</span>
+          
+        </div>
+    
+        <div class="contentContainer">
+          <router-outlet></router-outlet>
+        </div>
+
+      </mat-sidenav-content>
+    </mat-sidenav-container>  
+  </div> 
+</ng-template>

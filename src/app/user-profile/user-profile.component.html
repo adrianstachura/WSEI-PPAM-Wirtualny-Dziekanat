@@ -1,0 +1,177 @@
+<div *ngIf="auth.user$ | async as user" class="contentContainer">
+
+   
+        <div class="basicInfo">
+            <div class="info">
+                <div class="picture">
+                    <img class="profilepicture" src="{{user.photoURL}}">
+                </div>
+                <div class="data">
+                    <div class="xd">
+
+                    <br> <br> <br> <br>
+                   
+                    <p class="DD">Imię</p>
+                    <p class="D">{{user.name}}</p>
+                    <mat-divider></mat-divider>
+                    <p class="DD">Nazwisko</p>
+                    <p class="D">{{user.surname}}</p>
+                    <mat-divider></mat-divider>
+                    <p class="DD">Numer albumu</p>
+                    <p class="D">{{user.studentId}}</p>
+                    <mat-divider></mat-divider>
+                    <p class="DD">E-mail</p>
+                    <p class="D">{{user.email}}</p>
+                    <mat-divider></mat-divider>
+                </div>
+
+                </div>
+            </div>
+            
+
+            <div class=settingsMenu>
+                <p class="settingsButtons">USTAWIENIA</p><br><br>
+                <a class="settingsButtons" href="">Zmień hasło ></a> <br><br>
+                <a class="settingsButtons" href="">Zmień E-mail ></a> <br><br>
+                <a class="settingsButtons" href="">Ustawienia powiadomień ></a>
+            </div>
+        </div>
+        <div class="mainInfo">
+            <mat-tab-group>
+                <mat-tab label="Osobowe"> 
+                    <table class="table-fill">
+                        
+                        <tbody class="table-hover">
+                        <tr>
+                            <td class="text-left">PESEL</td>
+                            <td class="text-left">{{user.pesel}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Data Urodzenia</td>
+                            <td class="text-left">{{user.dataurodzenia}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Miejsce Urodzenia</td>
+                            <td class="text-left">{{user.miejsceurodzenia}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Płeć</td>
+                            <td class="text-left">{{user.plec}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Narodowość</td>
+                            <td class="text-left">{{user.narodowosc}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Obywatelstwo</td>
+                            <td class="text-left">{{user.obywatelstwo}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Seria i numer dowodu osobistego </td>
+                            <td class="text-left">{{user.seria}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Imię Matki</td>
+                            <td class="text-left">{{user.imiematki}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Imię Ojca</td>
+                            <td class="text-left">{{user.imieojca}}</td>
+                        </tr>
+                        </tbody>
+                        </table>
+                          
+                </mat-tab>
+                <mat-tab label="Adresy"> 
+                        <table class="table-fill">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Adres stałego zameldowania</th>
+                            </tr>
+                        </thead>
+                            <tbody class="table-hover">
+                                <tr>
+                                    <td class="text-left">Ulica</td>
+                                    <td class="text-left">{{user.ulica_stale}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Kod pocztowy</td>
+                                    <td class="text-left">{{user.kod_stale}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Miejscowość</td>
+                                    <td class="text-left">{{user.miejsce_stale}}</td>
+                                </tr>
+                        
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Dane do korespondencji</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-hover">
+                                <tr>
+                                    <td class="text-left">Ulica</td>
+                                    <td class="text-left">{{user.ulica_korespondencja}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Kod pocztowy</td>
+                                    <td class="text-left">{{user.kod_korespondencja}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Miejscowość</td>
+                                    <td class="text-left">{{user.miejsce_korespondencja}}</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Dane Kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-hover">
+                                <tr>
+                                    <td class="text-left">E-mail prywatny</td>
+                                    <td class="text-left">{{user.email}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">E-mail</td>
+                                    <td class="text-left">{{user.email_uczelnia}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Numer Telefonu</td>
+                                    <td class="text-left">{{user.telefon}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </mat-tab>
+                <mat-tab label="Wykształcenie">
+                    <table class="table-fill">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Szkoła średnia</th>
+                            </tr>
+                        </thead>
+                            <tbody class="table-hover">
+                                <tr>
+                                    <td class="text-left">Numer świadectwa maturalnego</td>
+                                    <td class="text-left">{{user.swiad_numer}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Data wydania</td>
+                                    <td class="text-left">{{user.swiad_data_wyd}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Szkoła</td>
+                                    <td class="text-left">{{user.szkola}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Rok ukończenia</td>
+                                    <td class="text-left">{{user.szkola_rok}}</td>
+                                </tr>
+                        
+                            </tbody>
+                         </table>
+                </mat-tab>
+              </mat-tab-group>
+        </div>
+

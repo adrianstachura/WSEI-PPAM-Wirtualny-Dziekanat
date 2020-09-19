@@ -1,0 +1,30 @@
+<div *ngIf="(auth.user$ | async) as user; else loading">
+    
+</div>
+
+<!-- User NOT logged in -->
+<ng-template #loading>
+    <div class="login">
+
+        <div class="lc">
+            <img class="logo" src="https://pesi.pl/img/offers/projektowanie-logo-1.png" alt="">
+        </div>
+
+        <div class="rc">
+
+            <div class>
+                <p class="welcome">Wprowadź dane logowania</p>
+                <input type="text" #email placeholder="Email"> <br>
+                <input type="password" #password placeholder="Hasło"> <br>
+                <button class="loginButton" (click)="auth.emailSignin(email.value,password.value)">Zaloguj</button> <br><br>
+                <a href="https://www.reddit.com/r/memes/comments/c3p3dy/i_drew_all_the_boys_together_and_i_did_it_for_the/"
+                    target="_blank" class="forgotPassword">Nie pamiętam loginu/hasła</a>
+            </div>
+        </div>
+
+    </div>
+</ng-template>
+
+
+
+

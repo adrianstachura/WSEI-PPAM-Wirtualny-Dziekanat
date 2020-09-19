@@ -1,0 +1,53 @@
+<div class="mainContainer" *ngIf = "role == 'admin'">
+    <mat-card>
+
+        <div class="cont">
+            <p>Przypisz przedmiot <br> do semestru</p>
+        </div>
+
+        <div class="select">
+    
+            <select [(ngModel)]="kierunek" name="slct" id="slct" (change)="getSemestrQuant()">
+                <option [ngValue]="undefined" disabled selected>Wybierz kierunek</option>
+                <option *ngFor="let kierunek of kierunki | async" [value]="kierunek.nazwa">
+                    {{kierunek.nazwa}}
+                </option>
+            </select>
+        </div>
+
+        <div class="select">
+            <select [(ngModel)]="semestr" name="slct" id="slct">
+                <option [ngValue]="undefined" disabled selected>Wybierz semestr</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+
+            </select>
+        </div>
+
+        <div class="select">
+            <select [(ngModel)]="przedmiot" name="slct" id="slct">
+                <option [ngValue]="undefined" disabled selected>Wybierz przedmiot</option>
+                <option *ngFor="let przedmiot of przedmioty | async" [value]="przedmiot.nazwa">
+                    {{przedmiot.nazwa}}
+                </option>
+            </select>
+        </div>
+
+        <div class="select">
+            <select [(ngModel)]="prowadzacy" name="slct" id="slct">
+                <option [ngValue]="undefined" disabled selected>Wybierz prowadzącego</option>
+                <option *ngFor="let prowadzacy of prowadzacys | async" [value]="prowadzacy.imieNazwisko">
+                    {{prowadzacy.imieNazwisko}}
+                </option>
+            </select>
+        </div>
+
+        <button mat-raised-button (click)="addPrzedmiot()">+</button>
+
+    </mat-card>
+</div>

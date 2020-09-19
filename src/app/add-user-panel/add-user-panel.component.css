@@ -1,0 +1,28 @@
+.mat-form-field {
+    padding: 20px;
+    color: black;
+}
+
+.title{
+    padding: 20px;
+    font-weight: 400;
+    font-size: medium;
+}
+
+.end{
+    background-color: #c2185b;;
+}
+
+.stepper{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 95%;
+    background-color: white;
+}
+
+.card-title, .upload{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+

@@ -1,0 +1,84 @@
+<div class="contentContainer" *ngIf = "role == 'admin'">
+
+    <div class="dataContainer">
+        <div class="input-container" id="test">		
+            <input [(ngModel)]="studentId" type="text" placeholder="Nr Indeksu" (ngModelChange)="getNrAlbumu()" maxlength="5"/> 
+        </div>
+ 
+
+    <div class="dataRow"> Podstawowe Dane
+            <div class="input-container">Imię: <input disabled [(ngModel)]="kierunki.name"></div>
+            <div class="input-container">Nazwisko: <input disabled [(ngModel)]="kierunki.surname"></div>
+            <div class="input-container">Nr Albumu: <input disabled [(ngModel)]="kierunki.studentId"></div>
+            <div class="input-container">Kierunek: <input disabled [(ngModel)]="kierunki.kierunek"></div>
+        </div>  
+
+        <div class="dataRow"> Adres Zameldowania
+             <div class="input-container">Ulica: <input [(ngModel)]="kierunki.ulica_stale"></div>
+             <div class="input-container">Kod pocztowy: <input [(ngModel)]="kierunki.kod_stale"></div>
+             <div class="input-container">Miejscowość: <input [(ngModel)]="kierunki.miejsce_stale"></div>
+        </div>
+
+        <div class="dataRow"> Adres Zameldowania
+            <div class="input-container">Ulica: <input [(ngModel)]="kierunki.ulica_korespondencja"></div>
+            <div class="input-container">Kod pocztowy: <input [(ngModel)]="kierunki.kod_korespondencja"></div>
+            <div class="input-container">Miejscowość: <input [(ngModel)]="kierunki.miejsce_korespondencja"></div>
+        </div>
+        
+        <div class="dataRow"> Dane Kontaktowe
+            <div class="input-container">Email: <input [(ngModel)]="kierunki.email"></div>
+            <div class="input-container">Telefon: <input [(ngModel)]="kierunki.telefon"></div>
+        </div>
+
+        <button mat-raised-button (click)="editData()">Zaktualizuj Dane</button>
+          
+    </div>
+    <div class=semestrContainer [hidden]="!edited">
+
+    
+    <mat-card>
+        <h3>Zapisz/Wypisz studenta z semestru</h3>
+        <div class="select">
+            <select name="slct" id="slct" [(ngModel)]="semestr" (ngModelChange)="getStudyAndLecturerName()" >
+                <option [ngValue]="undefined" disabled selected>Semestr</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+            </select>
+        </div>
+    
+       
+        <button mat-raised-button (click)="openDialogAdd()">Zapisz na semestr</button>
+
+        <button mat-raised-button (click)="openDialogRemove()">Wypisz z semestru</button>
+    
+    </mat-card>
+</div>
+    <!-- 
+        <div class="select">
+            <select name="slct" id="slct" [(ngModel)]="semestr" (change)="getStudyAndLecturerName()" >
+                <option [ngValue]="undefined" disabled selected>Semestr</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+            </select>
+           
+        </div>
+
+            <button class="dialogButton" mat-raised-button (click)="openDialogAdd()">Zapisz na semestr</button>
+
+            <button class="dialogButton" mat-raised-button (click)="openDialogRemove()">Wypisz z semestru</button>
+     </div> -->
+
+    
+
+
+</div>

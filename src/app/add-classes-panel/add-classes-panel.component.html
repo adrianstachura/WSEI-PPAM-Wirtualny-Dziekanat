@@ -1,0 +1,124 @@
+<div *ngIf = "role == 'admin'">
+    <div class="supportContainer"></div>
+
+    <mat-card>
+        <div class="simpleCard">Dodaj przedmiot</div>
+
+        <br>
+        <br>
+
+        <div class="input-container">		
+            <input [(ngModel)]="nazwaPrzedmiotu" type="text"/>
+            <label>Nazwa przedmiotu</label>
+        </div>
+
+        <button mat-raised-button (click)="addSubject()">+</button>
+    </mat-card>
+
+    <mat-card>
+        <div class="simpleCard">Dodaj grupę studencką</div>
+
+        <br>
+        <br>
+
+        <div class="input-container">		
+            <input [(ngModel)]="nazwaGrupy" type="text"/>
+            <label>Nazwa grupy</label>
+        </div>
+
+        <button mat-raised-button (click)="addStudentGroup()">+</button>
+    </mat-card>
+
+    <mat-card id="supportID">
+        <div class="simpleCard">Dodaj salę</div>
+
+        <br>
+        <br>
+
+        <div class="input-container">		
+            <input [(ngModel)]="nazwaSali" type="text"/>
+            <label>Nazwa sali</label>
+        </div>
+
+        <button mat-raised-button (click)="addClassroom()">+</button>
+    </mat-card>
+
+    <mat-card>
+        <div class="simpleCard">Dodaj kierunek</div>
+
+        <br>
+        <br>
+
+        <div class="input-container" id="kierunek">		
+            <input [(ngModel)]="nazwaKierunku" type="text"/>
+            <label>Nazwa kierunku</label>
+        </div>
+
+        <div class="select" id="KierunekSelect">
+            <select name="slct" id="slct" [(ngModel)]="ilosc">
+                <option [ngValue]="undefined" disabled selected>Ilość semestrów</option>
+                <option>3</option>
+                <option>4</option>
+                <option>6</option>
+                <option>7</option>
+            </select>
+        </div>
+
+        <br>
+
+        <button mat-raised-button (click)="addSpeciality()">+</button>
+    </mat-card>
+
+    <mat-card>
+        <div class="simpleCard" >Dodaj Wykładowcę</div>
+
+        <br>
+        <br>
+
+        <div class="input-container">		
+            <input [(ngModel)]="tytul" type="text"/>
+            <label>Tytuł</label>
+        </div>
+
+        <div class="input-container">		
+            <input [(ngModel)]="imieNazwisko" type="text"/>
+            <label>Imię i nazwisko</label>
+        </div>
+
+        <div class="input-container">		
+            <input [(ngModel)]="email" type="text"/>
+            <label>E-mail</label>
+        </div>
+
+        <div class="input-container">		
+            <input [(ngModel)]="haslo" type="text"/>
+            <label>Haslo</label>
+        </div>
+
+        <button mat-raised-button (click)="addLecturer()">+</button>
+    </mat-card>
+
+    <mat-card>
+        <div class="simpleCard" >Dodaj Administratora </div>
+
+        <br>
+        <br>
+
+        <div class="input-container">		
+            <input [(ngModel)]="imieNazwiskoAdmin" type="text"/>
+            <label>Imie i nazwisko</label>
+        </div>
+
+        <div class="input-container">		
+            <input [(ngModel)]="emailAdmin" type="text"/>
+            <label>E-mail</label>
+        </div>
+
+        <div class="input-container">		
+            <input [(ngModel)]="hasloAdmin" type="text"/>
+            <label>Hasło</label>
+        </div>
+
+        <button mat-raised-button (click)="addAdmin()">+</button>
+    </mat-card>
+</div>

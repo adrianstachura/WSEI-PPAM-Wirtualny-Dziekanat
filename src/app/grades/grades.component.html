@@ -1,0 +1,34 @@
+<div class="datepick" *ngIf = "role == 'student'">
+    <mat-form-field appearance="fill">
+        <mat-label>Semestr</mat-label>
+        <mat-select [(ngModel)]='nrsem' (ngModelChange)="showGrades()" >
+          <mat-option *ngFor="let semestr of semestry" [value]="semestr.value">
+            {{semestr.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <div class="mainContainer mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+      
+        <ng-container matColumnDef="Nazwa">
+          <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+          <td mat-cell *matCellDef="let element"> {{element.nazwa}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Prowadzacy">
+          <th mat-header-cell *matHeaderCellDef > Prowadzący </th>
+          <td mat-cell *matCellDef="let element"> {{element.prowadzacy}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="Ocena">
+          <th mat-header-cell *matHeaderCellDef> Ocena </th>
+          <td mat-cell *matCellDef="let element"> {{element.ocena}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      </table>
+    </div>
+  </div>

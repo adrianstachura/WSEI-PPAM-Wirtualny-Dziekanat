@@ -1,0 +1,64 @@
+.mainContainer{
+    background-color: white;
+}
+
+.settingsContainer{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+}
+
+.mat-card{
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 15px;
+    height: 40px;
+}
+
+p{
+    float: left;
+    justify-content: space-around;
+    line-height: 45px;
+    vertical-align: middle;
+}
+
+.mat-form-field{
+    width: 300px;
+    height: 40px;
+    margin-left: 150px;
+}
+
+.mat-form-field{
+    padding: 0, 0, 0, 0;
+}
+
+.pContainer{
+    height: 45px;
+    width: 100px;
+    float: left;
+}
+
+.mat-button{
+    width: 75;
+    height: 50px;
+    color: white;
+    background-color: #e91e63;
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.settingsDropdown{
+    width: 200px;
+    float: left;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.settingsDatePicker{
+    width: 200px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 6px;
+}

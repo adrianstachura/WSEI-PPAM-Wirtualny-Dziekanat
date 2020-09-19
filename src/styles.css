@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+
+.logo{
+    width: 70%;
+    height: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 15%;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #7067CF, #E91E63);
+    background-size: 2000% 500%;
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-tab-label, .mat-tab-link{
+    color: black;
+}
+
+.mat-tab-labels{
+    justify-content: center;
+}
+
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: yello;
+}
+
+.mat-divider{
+    border-top-color: grey;
+    width: 75%;
+}
+
+.mat-tab-list{
+margin-bottom:55px;
+}
+.mat-elevation-z8 {
+    box-shadow:none
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #424242;
+}
+
+.mat-list-base{
+    padding: 0 !important;
+}

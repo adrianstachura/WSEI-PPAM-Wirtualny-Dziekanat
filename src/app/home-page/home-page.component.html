@@ -1,0 +1,40 @@
+<div class="titleCont">
+  <mat-card>
+    W tym miejscu znajdziesz wszystie aktualności
+  </mat-card>
+</div>
+
+<div class="addCont" *ngIf = "role == 'admin'">
+ <mat-card>
+  <form class="example-form">
+    <mat-form-field>
+      <mat-label>Tytuł</mat-label>
+      <input matInput [(ngModel)]="tytul" placeholder="" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+  
+    <mat-form-field class="annForm">
+      <mat-label>Treść ogłoszenia</mat-label>
+      <textarea matInput [(ngModel)]="tresc" placeholder="" [ngModelOptions]="{standalone: true}"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addAnn()">+</button>
+  </form>
+  
+ </mat-card>
+</div>
+
+<div class="mainConteiner" *ngFor="let item of items | async">
+    <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+             {{item.tytul}}
+            </mat-panel-title>
+            <mat-panel-description>
+              Autor:  {{item.autor}}
+              <button mat-mini-fab color="primary" (click)="fetusDeletus(item.tekst)" *ngIf = "role == 'admin'">-</button>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      <p>{{item.tekst}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

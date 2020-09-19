@@ -1,0 +1,77 @@
+.mainContainer{
+    padding: 1%;
+}
+
+.mat-card{
+    width: 98%;
+    align-content: center;
+    float: left;
+    height: 42px;
+}
+
+.cont{
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.mat-raised-button{
+    margin-top: 3px;
+    background-color: #e91e63;
+    font-size: 20px;
+}
+
+/* select */
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #5C5C5C;
+    background-image: none;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 3em;
+    line-height: 3;
+    background: #5C5C5C;
+    overflow: hidden;
+    border-radius: .25em;
+    float: left;
+    margin-right: 50px;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #e91e63;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #5C5C5C;
+  }

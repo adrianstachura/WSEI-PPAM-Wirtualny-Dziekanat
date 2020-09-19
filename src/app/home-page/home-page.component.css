@@ -1,0 +1,37 @@
+.mainConteiner{
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mat-expansion-panel-header-description{
+    justify-content: right;
+}
+
+.mat-card{
+    background-color: #545454;
+}
+
+.annForm{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 900px;
+}
+
+.titleCont{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.addCont{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+}
+
+.mat-mini-fab{
+    margin-left: 10px;
+    margin-right: 10px;
+}

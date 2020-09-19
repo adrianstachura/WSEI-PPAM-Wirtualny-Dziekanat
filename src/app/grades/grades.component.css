@@ -1,0 +1,25 @@
+.mainContainer {
+    height: 555px;
+    overflow: auto;
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  .mat-elevation-z8 {
+    box-shadow: pink;
+}
+
+@media (min-width:769px){
+  .datepick{
+    padding-top: 75px;
+    padding-left: 115px;
+    padding-right: 115px;
+}}
+
+@media (max-width: 768px){
+  .datepick{
+    padding-top: 15px;
+}}

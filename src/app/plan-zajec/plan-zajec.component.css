@@ -1,0 +1,49 @@
+.mainContainer {
+  height: 700px;
+  scrollbar-width: none;  /* Firefox */
+}
+
+table {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  box-shadow: pink;
+}
+
+@media (max-height:850px){
+  .mainContainer {
+    height: 500px;
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .mat-elevation-z8 {
+    box-shadow: pink;
+  }
+}
+
+@media (min-width:769px){
+  .datepick{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}}
+
+@media (max-width: 768px){
+  .datepick{
+    padding-top: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+}}
+
+.mat-row:nth-child(even){
+  background-color:#5C5C5C;
+}
+
+.mat-row:nth-child(odd){
+  background-color:#454545;
+}
